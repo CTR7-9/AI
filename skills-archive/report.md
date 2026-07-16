@@ -37,6 +37,50 @@
   4. 对每个 skill 生成 schema 化的调用协议（JSON Schema）以便工具化校验
   5. 对外部调用（API/网络）添加权限与速率限制
 
+高价值 prompt 示例（摘录）
+
+- bytedance/AnewOmni/docs/ui/prompt-language-design.md — PromptProgram 抽象与分层设计（摘录）
+
+```markdown
+The purpose is not to replace the existing backend templates, but to provide a unified, composable, and interactive abstraction on top of them so users can control generation by writing prompt programs.
+
+Target modalities:
+
+- small molecules
+- peptides
+- antibodies
+
+Core principles:
+
+- users interact with a `PromptProgram`, not directly with backend template internals
+- the model consumes a unified intermediate representation
+- the surface API should feel like Python so it works in both REPL and browser demos
+
+## Architecture
+
+The design uses three layers.
+
+### User Layer
+
+Users construct a prompt through a Python-like API:
+
+```python
+graph = MoleculePrompt()
+graph.add_fragment("c1ccccc1")
+graph.add_filter(MolBeautyFilter(th=1))
+graph.run_generation(save_dir="./outputs/mol_case")
+```
+
+### Compiler Layer
+
+Prompt objects are compiled into an intermediate representation containing:
+
+- nodes
+- edges
+- filters
+- generation metadata
+```
+
 接下来的工作流
 - 我将继续抓取更多文件并在此分支内补充完整的 skill 档案（每个 skill 的 SKILL.md、prompts、示例脚本）。
 - 抓取完成并经你确认后，我可以在该分支创建 Pull Request 合并到默认分支，或按你要求导出 ZIP。
