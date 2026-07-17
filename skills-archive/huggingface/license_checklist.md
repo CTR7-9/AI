@@ -1,6 +1,6 @@
-# Dataset license & redistribution checklist (Hugging Face) — excerpt
+# Hugging Face — license & attribution checklist
 
-- Confirm license compatibility before redistributing prompts or datasets.
-- Include source attribution and original commit SHA in metadata for provenance.
+- Verify license compatibility before publishing.  
+- Include attribution, provenance, and any required notices in the README.
 
-(Excerpted from dataset publication guidelines)
+(Pre-publish checklist)
